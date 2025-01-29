@@ -1,3 +1,4 @@
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -18,11 +19,13 @@ spec:
         app: accounts
     spec:
       containers:
-      - image: us.icr.io/sn-labs-eldargonzale/accounts:1
+      - image: IMAGE_NAME_HERE
         name: accounts
         resources: {}
 
         env:
+          # Env vars needed for accesing postgres database.
+          # 'oc describe secret <...>' used to get data / key names.
           - name: DATABASE_HOST
             value: postgresql
           - name: DATABASE_NAME
@@ -41,3 +44,4 @@ spec:
                 name: postgresql
                 key: database-user
 status: {}
+...
