@@ -11,6 +11,7 @@ from . import app  # Import Flask application
 
 HEADER_CONTENT_TYPE = "application/json"
 
+
 ############################################################
 # Health Endpoint
 ############################################################
@@ -57,6 +58,7 @@ def create_accounts():
     return make_response(
         jsonify(message), status.HTTP_201_CREATED, {"Location": location_url}
     )
+
 
 ######################################################################
 # LIST ALL ACCOUNTS
