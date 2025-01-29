@@ -264,4 +264,3 @@ class TestAccountService(TestCase):
         self.assertEqual(len(response.get_json()), 0)
         # Just to be sure
         self.assertEqual(len(Account.all()), 0)
-     
